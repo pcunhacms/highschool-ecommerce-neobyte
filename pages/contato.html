@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fale com a NeoByte.">
+    <title>Contato | NeoByte Tecnologia</title>
+    <link rel="icon" href="img/logo.svg">
+  
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    
+    <header class="topo">
+        <div class="topo_barra">
+            <a class="topo_marca" href="index.html">
+                <img src="img/logo.svg" alt="Logotipo NeoByte">
+                <div>
+                    <h1 class="topo_nome">NeoByte</h1>
+                    <p class="topo_apoio">Tecnologia que cabe no seu dia</p>
+                </div>
+            </a>
+            <div class="topo_acoes">
+                <span class="carrinho" title="Itens no carrinho"><img src="img/shopping-cart.svg" alt="Icone de Carrinho de Supermercado"> <span id="contador-carrinho">0</span></span>
+                <button type="button" class="menu_botao" aria-expanded="false" aria-controls="menu-principal">☰ Menu</button>
+            </div>
+        </div>
+        <nav class="menu" id="menu-principal" aria-label="Menu principal">
+            <ul class="menu_lista">
+                <li><a class="menu_link" href="index.html">Início</a></li>
+                <li><a class="menu_link" href="sobre.html">Sobre</a></li>
+                <li><a class="menu_link" href="produtos.html">Produtos</a></li>
+                <li><a class="menu_link menu_link--ativo" aria-current="page" href="contato.html">Contato</a></li>
+                <li><a class="menu_link" href="cadastro.html">Cadastrar produto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+  
+    <main>
+        <section class="secao layout-contato">
+            <div>
+                <h2>Fale conosco</h2>
+                
+                <form class="formulario formulario--duas" id="form-contato" novalidate>
+                    <div class="campo">
+                        <label for="nome-contato">Nome completo *</label>
+                        <input type="text" id="nome-contato" name="nome" required minlength="3" maxlength="80" autocomplete="name">
+                        <p class="campo_erro"></p>
+                    </div>
+                    <div class="campo">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" name="email" required placeholder="voce@email.com" autocomplete="email">
+                        <p class="campo_erro"></p>
+                    </div>
+                    <div class="campo">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(31) 99999-9999"
+                               pattern="\(?\d{2}\)?\s?\d{4,5}-?\d{4}" autocomplete="tel">
+                        <p class="campo_erro"></p>
+                    </div>
+                    <div class="campo">
+                        <label for="assunto">Assunto *</label>
+                        <select id="assunto" name="assunto" required>
+                            <option value="">Selecione...</option>
+                            <option value="duvida">Dúvida sobre produto</option>
+                            <option value="pedido">Acompanhar pedido</option>
+                            <option value="troca">Troca ou devolução</option>
+                            <option value="outro">Outro assunto</option>
+                        </select>
+                        <p class="campo_erro"></p>
+                    </div>
+                    <div class="campo campo--inteiro">
+                        <label for="mensagem">Mensagem *</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" required minlength="15" maxlength="500"></textarea>
+                        <p class="campo_dica" id="contador-caracteres">500 caracteres restantes</p>
+                        <p class="campo_erro"></p>
+                    </div>
+                    <p class="mensagem" id="mensagem-contato" role="status"></p>
+                    <button type="submit" class="botao">Enviar mensagem</button>
+                </form>
+            </div>
+
+            <aside>
+                <h2>Atendimento</h2>
+                <ul class="grade-info" style="grid-template-columns: 1fr;">
+                    <li>
+                        <h3><div class="contatos-icons"><img src="img/mail.svg" alt="Icone de Caixa de Mensagem"></div> E-mail</h3>
+                        <p><a href="mailto:contato@neobyte.com.br">contato@neobyte.com.br</a></p>
+                    </li>
+                    <li>
+                        <h3><div class="contatos-icons"><img src="img/whatsapp.svg" alt="Icone de Balão de Mensagem"></div> Whatsapp</h3>
+                        <p>(31) 99999-0000</p>
+                    </li>
+                    <li>
+                        <h3><div class="contatos-icons"><img src="img/clock.svg" alt="Icone de Relógio"></div> Horário</h3>
+                        <p>Segunda a sexta, das 9h às 18h.<br>Sábado, das 9h às 13h.</p>
+                    </li>
+                </ul>
+            </aside>
+        </section>
+    </main>
+
+    
+    <footer class="rodape">
+        <p>NeoByte Tecnologia &middot; Projeto Integrador TMS0058 &middot; <a href="contato.html">Fale conosco</a></p>
+        <p style="margin-top: 6px; opacity: 0.8;">&copy; 2026 &middot; Loja fictícia criada para fins acadêmicos.</p>
+    </footer>
+
+    <script src="js/produtos.js"></script>
+    <script src="js/contato.js"></script>
+</body>
+</html>

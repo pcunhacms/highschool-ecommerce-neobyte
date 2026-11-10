@@ -1,0 +1,533 @@
+/* =========================================================
+   NeoByte Tecnologia - Folha de estilo EXTERNA
+   Abordagem Mobile First: estilos base para celular,
+   media queries (min-width) ampliam para tablet/computador.
+   ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --fundo: #e4edef;
+    --escuro: #10333c;
+    --apoio: #86aeb8;
+    --texto-suave: #5c7883;
+    --destaque: #06707D;
+    --destaque-hover: #044e58;
+    --papel: #ffffff;
+    --erro: #b3261e;
+    --sucesso: #1e7b4a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background-color: var(--fundo);
+    color: black;
+    font-family: "Inter", sans-serif;
+    line-height: 1.5;
+}
+
+img {
+
+    max-width: 100%; display: block; 
+
+}
+
+a { 
+    color: var(--destaque); 
+}
+
+/* ---------- Cabeçalho e menu ---------- */
+.topo {
+    background-color: var(--escuro);
+    color: #ffffff;
+    padding: 16px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.topo_barra {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.topo_marca {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.topo_marca img { width: 40px; height: 40px; }
+
+.topo_nome {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.topo_apoio {
+    margin: 0;
+    color: var(--apoio);
+    font-size: 0.85rem;
+}
+
+.topo_acoes {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.carrinho {
+    background-color: var(--destaque);
+    color: #fff;
+    display: flex;
+    gap: 2px;
+    border-radius: 80px;
+    padding: 4px 12px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.menu_botao {
+    font: inherit;
+    background: transparent;
+    color: #fff;
+    border: 2px solid var(--apoio);
+    border-radius: 8px;
+    padding: 4px 10px;
+    cursor: pointer;
+}
+
+.menu {
+    display: none;            /* escondido no celular até clicar no botão */
+    margin-top: 12px;
+}
+
+.menu.aberto { display: block; }
+
+.menu_lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.menu_link {
+    display: block;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu_link:hover,
+.menu_link--ativo {
+    background-color: var(--destaque);
+}
+
+/* ---------- Seções gerais ---------- */
+.secao {
+    padding: 30px 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.secao h2 { margin-top: 0; }
+
+.destaque-hero {
+    background: linear-gradient(135deg, var(--escuro), var(--destaque));
+    color: #fff;
+    border-radius: 16px;
+    padding: 28px 22px;
+}
+
+.destaque-hero h2 { font-size: 1.6rem; margin-bottom: 8px; }
+.destaque-hero p { color: #cfe3e8; }
+
+.botao {
+    font: inherit;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--destaque);
+    color: white;
+    border: none;
+    border-radius: 80px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.botao:hover { background-color: var(--destaque-hover); }
+
+.botao--claro {
+    background-color: #fff;
+    color: var(--escuro);
+}
+
+.botao--claro:hover { background-color: #cfe3e8; }
+
+.botao--secundario {
+    background-color: transparent;
+    color: var(--destaque);
+    border: 2px solid var(--destaque);
+}
+
+.botao--secundario:hover { background-color: #d3e6ea; }
+
+.botao--perigo { background-color: var(--erro); }
+.botao--perigo:hover { background-color: #8c1d17; }
+
+/* ---------- Cards de produto ---------- */
+.produtos {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;   /* 1 coluna no celular */
+    gap: 20px;
+}
+
+.produto {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.produto_figura {
+    height: 160px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.produto_corpo {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.produto_categoria {
+    margin: 0 0 4px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--destaque);
+    font-weight: bold;
+}
+
+.produto_nome {
+    margin: 0px;
+    font-size: 1.05rem;
+}
+
+.produto_texto {
+    margin: 8px 0;
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+    flex: 1;
+}
+
+.produto_preco {
+    margin: 0 0 14px;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.produto_botoes {
+    display: grid;
+    gap: 8px;
+}
+
+.selo {
+    display: inline-block;
+    font-size: 0.75rem;
+    padding: 2px 10px;
+    border-radius: 80px;
+    background-color: #d3e6ea;
+    color: var(--escuro);
+    margin-bottom: 8px;
+}
+
+.selo--esgotado { background-color: #f6d6d3; color: var(--erro); }
+
+/* ---------- Filtros ---------- */
+.filtros {
+    background-color: var(--papel);
+    border-radius: 12px;
+    padding: 16px;
+    display: grid;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.resultado-info {
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+    margin: 0 0 12px;
+}
+
+.vazio {
+    background: var(--papel);
+    padding: 24px;
+    border-radius: 12px;
+    text-align: center;
+    color: var(--texto-suave);
+}
+
+/* ---------- Tabelas ---------- */
+.tabela-rolagem { overflow-x: auto; }
+
+.tabela {
+    width: 100%;
+    min-width: 520px;
+    border-collapse: collapse;
+    background-color: var(--papel);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.tabela caption {
+    text-align: left;
+    padding: 0 0 8px;
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+}
+
+.tabela th,
+.tabela td {
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--fundo);
+}
+
+.tabela thead th {
+    background-color: var(--escuro);
+    color: #fff;
+}
+
+.tabela tfoot td {
+    font-size: 0.85rem;
+    color: var(--texto-suave);
+}
+
+/* ---------- Formulários ---------- */
+.formulario {
+    background-color: var(--papel);
+    border-radius: 12px;
+    padding: 20px;
+    display: grid;
+    gap: 14px;
+}
+
+.campo { 
+    display: grid; gap: 4px; 
+}
+
+.campo label { 
+    font-weight: 600; font-size: 0.9rem; 
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    font: inherit;
+    padding: 10px 12px;
+    border: 2px solid #c5d6da;
+    border-radius: 8px;
+    background: #fff;
+    width: 100%;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    outline: none;
+    border-color: var(--destaque);
+}
+
+.campo--erro input,
+.campo--erro select,
+.campo--erro textarea { 
+    border-color: var(--erro); 
+}
+
+.campo_erro {
+    color: var(--erro);
+    font-size: 0.8rem;
+    min-height: 1em;
+    margin: 0;
+}
+
+.campo_dica { color: var(--texto-suave); font-size: 0.8rem; margin: 0; }
+
+.mensagem {
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin: 0;
+    display: none;
+}
+
+.mensagem--sucesso { display: block; background: #d7efe2; color: var(--sucesso); }
+.mensagem--erro { display: block; background: #f6d6d3; color: var(--erro); }
+
+/* ---------- Listas informativas ---------- */
+
+.card-titulo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+.icon-bg {
+    background-color: #044e58;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.icon-bg img {
+    height: 30px;
+    width: 30px;
+}
+.grade-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 16px;
+}
+
+.grade-info h3 {
+    display: flex;
+    gap: 4px;
+}
+
+.contatos-icons {
+    background-color: #044e58;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.grade-info li {
+    background: var(--papel);
+    border-radius: 12px;
+    padding: 18px;
+}
+
+.grade-info h3 { margin: 0 0 6px; font-size: 1rem; }
+.grade-info p { margin: 0; color: var(--texto-suave); font-size: 0.9rem; }
+
+.categorias {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    
+}
+
+
+.categorias a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 16px;
+    border-radius: 80px;
+    background: var(--papel);
+    text-decoration: none;
+    color: var(--escuro);
+    border: 2px solid #c5d6da;
+}
+
+.categorias a img {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.categorias a:hover { border-color: var(--destaque); }
+
+/* ---------- Janela de detalhes (dialog) ---------- */
+.detalhes {
+    border: none;
+    border-radius: 16px;
+    padding: 0;
+    width: min(92vw, 520px);
+}
+
+.detalhes::backdrop { background: rgba(16, 51, 60, 0.6); }
+
+.detalhes_corpo { padding: 20px; }
+
+.detalhes dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 6px 14px;
+    margin: 12px 0 18px;
+}
+
+.detalhes dt { font-weight: 600; }
+.detalhes dd { margin: 0; color: var(--texto-suave); }
+
+/* ---------- Rodapé ---------- */
+.rodape {
+    background-color: var(--escuro);
+    color: #a9c4cb;
+    padding: 20px 24px;
+    font-size: 0.85rem;
+    margin-top: 30px;
+}
+
+.rodape p { margin: 0; }
+.rodape a { color: #fff; }
+
+/* =========================================================
+   Tablet (a partir de 600px)
+   ========================================================= */
+@media (min-width: 600px) {
+    .produtos { grid-template-columns: 1fr 1fr; }
+    .grade-info { grid-template-columns: 1fr 1fr; }
+    .filtros { grid-template-columns: 2fr 1fr 1fr; align-items: end; }
+    .formulario--duas { grid-template-columns: 1fr 1fr; }
+    .formulario--duas .campo--inteiro,
+    .formulario--duas .mensagem,
+    .formulario--duas .botao { grid-column: 1 / -1; }
+    .destaque-hero { padding: 40px; }
+    .destaque-hero .botao { width: auto; padding: 10px 28px; }
+}
+
+/* =========================================================
+   Computador (a partir de 900px): menu horizontal, 3 colunas
+   ========================================================= */
+@media (min-width: 900px) {
+    .topo_barra { flex-wrap: nowrap; }
+    .menu_botao { display: none; }
+    .menu {
+        display: block;
+        margin-top: 0;
+    }
+    .topo { display: flex; align-items: center; justify-content: space-between; }
+    .menu_lista { flex-direction: row; }
+    .produtos { grid-template-columns: 1fr 1fr 1fr; }
+    .grade-info { grid-template-columns: repeat(3, 1fr); }
+    .layout-contato { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; align-items: start; }
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conheça a NeoByte, seu público e objetivo.">
+    <title>Sobre | NeoByte Tecnologia</title>
+    <link rel="icon" href="img/logo.svg">
+    
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .sobre_bloco {
+            background-color: #ffffff;
+            border-left: 6px solid #06707D;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+        }
+        .sobre_bloco h3 { margin: 0 0 6px; color: #10333c; }
+        .sobre_bloco p { margin: 0; color: #5c7883; }
+
+        .numeros {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .numeros li {
+            background-color: #10333c;
+            color: #cfe3e8;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+        }
+        .numeros strong { display: block; font-size: 1.8rem; color: #ffffff; }
+
+        @media (min-width: 900px) {
+            .numeros { grid-template-columns: repeat(4, 1fr); }
+        }
+    </style>
+</head>
+
+<body>
+    
+    <header class="topo">
+        <div class="topo_barra">
+            <a class="topo_marca" href="index.html">
+                <img src="img/logo.svg" alt="Logotipo NeoByte">
+                <div>
+                    <h1 class="topo_nome">NeoByte</h1>
+                    <p class="topo_apoio">Tecnologia que cabe no seu dia</p>
+                </div>
+            </a>
+            <div class="topo_acoes">
+                <span class="carrinho" title="Itens no carrinho"><img src="img/shopping-cart.svg" alt="Icone de Carrinho de Supermercado"> <span id="contador-carrinho">0</span></span>
+                <button type="button" class="menu_botao" aria-expanded="false" aria-controls="menu-principal">☰ Menu</button>
+            </div>
+        </div>
+        <nav class="menu" id="menu-principal" aria-label="Menu principal">
+            <ul class="menu_lista">
+                <li><a class="menu_link" href="index.html">Início</a></li>
+                <li><a class="menu_link menu_link--ativo" aria-current="page" href="sobre.html">Sobre</a></li>
+                <li><a class="menu_link" href="produtos.html">Produtos</a></li>
+                <li><a class="menu_link" href="contato.html">Contato</a></li>
+                <li><a class="menu_link" href="cadastro.html">Cadastrar produto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+   
+    <main>
+        <section class="secao">
+            <h2>Sobre a NeoByte</h2>
+            <article class="sobre_bloco">
+                <h3>Quem somos</h3>
+                <p>A <strong>NeoByte Tecnologia</strong> é uma loja virtual especializada em eletrônicos e acessórios.
+                   Nascemos da ideia de que comprar tecnologia deveria ser simples: informações claras, comparação fácil
+                   entre produtos e preço justo.</p>
+            </article>
+
+            <article class="sobre_bloco">
+                <h3>Público-alvo</h3>
+                <p>Estudantes, profissionais e gamers entre 16 e 40 anos que buscam equipamentos para estudar,
+                   trabalhar ou se divertir, e que compram principalmente pelo celular.</p>
+            </article>
+
+            <article class="sobre_bloco">
+                <h3>Objetivo</h3>
+                <p>Oferecer uma vitrine organizada de produtos de tecnologia, com busca, filtros por categoria e
+                   detalhes de cada item, ajudando o cliente a escolher o produto certo para a sua necessidade.</p>
+            </article>
+        </section>
+
+        <section class="secao">
+            <h2>Nossos números</h2>
+            <ul class="numeros">
+                <li><strong>+10</strong> produtos no catálogo</li>
+                <li><strong>6</strong> categorias</li>
+                <li><strong>10x</strong> sem juros</li>
+                <li><strong>12</strong> meses de garantia</li>
+            </ul>
+        </section>
+
+        <section class="secao">
+            <h2>Nossa história</h2>
+            <div class="tabela-rolagem">
+                <table class="tabela">
+                    <caption>Principais marcos da loja.</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Ano</th>
+                            <th scope="col">Acontecimento</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><th scope="row">2024</th><td>Ideia da loja surge em um projeto da faculdade.</td></tr>
+                        <tr><th scope="row">2025</th><td>Definição do catálogo e da identidade visual.</td></tr>
+                        <tr><th scope="row">2026</th><td>Lançamento da loja virtual NeoByte.</td></tr>
+                    </tbody>
+                    <tfoot>
+                        <tr><td colspan="2">Loja fictícia desenvolvida para o Projeto Integrador.</td></tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- footer -->
+    <footer class="rodape">
+        <p>NeoByte Tecnologia &middot; Projeto Integrador TMS0058 &middot; <a href="contato.html">Fale conosco</a></p>
+        <p style="margin-top: 6px; opacity: 0.8;">&copy; 2026 &middot; Loja fictícia criada para fins acadêmicos.</p>
+    </footer>
+
+    <script src="js/produtos.js"></script>
+</body>
+</html>

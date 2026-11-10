@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cadastro de novos produtos da NeoByte.">
+    <title>Cadastrar produto | NeoByte Tecnologia</title>
+    <link rel="icon" href="img/logo.svg">
+   
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+   
+    <header class="topo">
+        <div class="topo_barra">
+            <a class="topo_marca" href="index.html">
+                <img src="img/logo.svg" alt="Logotipo NeoByte">
+                <div>
+                    <h1 class="topo_nome">NeoByte</h1>
+                    <p class="topo_apoio">Tecnologia que cabe no seu dia</p>
+                </div>
+            </a>
+            <div class="topo_acoes">
+                <span class="carrinho" title="Itens no carrinho"><img src="img/shopping-cart.svg" alt="Icone de Carrinho de Supermercado"> <span id="contador-carrinho">0</span></span>
+                <button type="button" class="menu_botao" aria-expanded="false" aria-controls="menu-principal">☰</button>
+            </div>
+        </div>
+        <nav class="menu" id="menu-principal" aria-label="Menu principal">
+            <ul class="menu_lista">
+                <li><a class="menu_link" href="index.html">Início</a></li>
+                <li><a class="menu_link" href="sobre.html">Sobre</a></li>
+                <li><a class="menu_link" href="produtos.html">Produtos</a></li>
+                <li><a class="menu_link" href="contato.html">Contato</a></li>
+                <li><a class="menu_link menu_link--ativo" aria-current="page" href="cadastro.html">Cadastrar produto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+   
+    <main>
+        <section class="secao">
+            <h2>Cadastrar novo produto</h2>
+            <p style="color: #5c7883; margin-top: 0;">Nesta etapa os produtos ficam guardados temporariamente em um vetor (array) no JavaScript. Ao recarregar a página, a lista volta ao estado inicial.</p>
+
+            <form class="formulario formulario--duas" id="form-cadastro" novalidate>
+                <div class="campo">
+                    <label for="nome">Nome do produto *</label>
+                    <input type="text" id="nome" name="nome" required minlength="3" maxlength="60" placeholder="Ex.: Tablet Pro 11">
+                    <p class="campo_erro"></p>
+                </div>
+                <div class="campo">
+                    <label for="categoria">Categoria *</label>
+                    <select id="categoria" name="categoria" required>
+                        <option value="">Selecione...</option>
+                    </select>
+                    <p class="campo_erro"></p>
+                </div>
+                <div class="campo">
+                    <label for="preco">Preço (R$) *</label>
+                    <input type="number" id="preco" name="preco" required min="0.01" max="100000" step="0.01" placeholder="0,00">
+                    <p class="campo_erro"></p>
+                </div>
+                <div class="campo">
+                    <label for="estoque">Quantidade em estoque *</label>
+                    <input type="number" id="estoque" name="estoque" required min="0" step="1" placeholder="0">
+                    <p class="campo_erro"></p>
+                </div>
+                <div class="campo">
+                    <label for="imagem">Imagem</label>
+                    <select id="imagem" name="imagem">
+                        <option value="">Imagem padrão</option>
+                        <option value="img/notebook.svg">Notebook</option>
+                        <option value="img/smartphone.svg">Smartphone</option>
+                        <option value="img/fone.svg">Fone de ouvido</option>
+                        <option value="img/caixa-som.svg">Caixa de som</option>
+                        <option value="img/teclado.svg">Teclado</option>
+                        <option value="img/mouse.svg">Mouse</option>
+                        <option value="img/monitor.svg">Monitor</option>
+                        <option value="img/smartwatch.svg">Smartwatch</option>
+                    </select>
+                    <p class="campo_dica">Pré-visualização:</p>
+                    <img id="previa-imagem" src="img/padrao.svg" alt="Pré-visualização da imagem do produto" style="width: 160px; border-radius: 8px;">
+                </div>
+                <div class="campo">
+                    <label for="descricao">Descrição *</label>
+                    <textarea id="descricao" name="descricao" rows="5" required minlength="10" maxlength="200"></textarea>
+                    <p class="campo_erro"></p>
+                </div>
+                <div class="campo campo--inteiro" style="grid-auto-flow: column; justify-content: start; align-items: center; gap: 8px;">
+                    <input type="checkbox" id="destaque" name="destaque" style="width: auto;">
+                    <label for="destaque" style="font-weight: normal;">Mostrar nos destaques da página inicial</label>
+                </div>
+                <p class="mensagem" id="mensagem-cadastro" role="status"></p>
+                <button type="submit" class="botao">Salvar produto</button>
+                <button type="reset" class="botao botao--secundario">Limpar formulário</button>
+            </form>
+        </section>
+
+        <section class="secao">
+            <h2>Produtos cadastrados (<span id="total-produtos">0</span>)</h2>
+            <div class="tabela-rolagem">
+                <table class="tabela" id="tabela-cadastrados">
+                    <caption>Conteúdo atual do vetor de produtos.</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Preço</th>
+                            <th scope="col">Estoque</th>
+                            <th scope="col">Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    
+    <footer class="rodape">
+        <p>NeoByte Tecnologia &middot; Projeto Integrador TMS0058 &middot; <a href="contato.html">Fale conosco</a></p>
+        <p style="margin-top: 6px; opacity: 0.8;">&copy; 2026 &middot; Loja fictícia criada para fins acadêmicos.</p>
+    </footer>
+
+    <script src="js/produtos.js"></script>
+    <script src="js/cadastro.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo de produtos de tecnologia da NeoByte.">
+    <title>Produtos | NeoByte Tecnologia</title>
+    <link rel="icon" href="img/logo.svg">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    
+    <header class="topo">
+        <div class="topo_barra">
+            <a class="topo_marca" href="index.html">
+                <img src="img/logo.svg" alt="Logotipo NeoByte">
+                <div>
+                    <h1 class="topo_nome">NeoByte</h1>
+                    <p class="topo_apoio">Tecnologia que cabe no seu dia</p>
+                </div>
+            </a>
+            <div class="topo_acoes">
+                <span class="carrinho" title="Itens no carrinho"><img src="img/shopping-cart.svg" alt="Icone de Carrinho de Supermercado"> <span id="contador-carrinho">0</span></span>
+                <button type="button" class="menu_botao" aria-expanded="false" aria-controls="menu-principal">☰ Menu</button>
+            </div>
+        </div>
+        <nav class="menu" id="menu-principal" aria-label="Menu principal">
+            <ul class="menu_lista">
+                <li><a class="menu_link" href="index.html">Início</a></li>
+                <li><a class="menu_link" href="sobre.html">Sobre</a></li>
+                <li><a class="menu_link menu_link--ativo" aria-current="page" href="produtos.html">Produtos</a></li>
+                <li><a class="menu_link" href="contato.html">Contato</a></li>
+                <li><a class="menu_link" href="cadastro.html">Cadastrar produto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <main>
+        <section class="secao">
+            <h2>Nossos produtos</h2>
+
+            
+            <form class="filtros" role="search" onsubmit="return false;">
+                <div class="campo">
+                    <label for="busca">Pesquisar</label>
+                    <input type="search" id="busca" placeholder="Ex.: notebook, fone, 5G...">
+                </div>
+                <div class="campo">
+                    <label for="filtro-categoria">Categoria</label>
+                    <select id="filtro-categoria">
+                        <option value="todas">Todas</option>
+                    </select>
+                </div>
+                <div class="campo">
+                    <label for="ordem">Ordenar por</label>
+                    <select id="ordem">
+                        <option value="padrao">Relevância</option>
+                        <option value="menor-preco">Menor preço</option>
+                        <option value="maior-preco">Maior preço</option>
+                        <option value="nome">Nome (A-Z)</option>
+                    </select>
+                </div>
+            </form>
+
+            <p class="resultado-info" id="resultado-info" aria-live="polite"></p>
+
+            <!-- lista preenchida pelo js (laço de repetição sobre o vetor) -->
+            <ul class="produtos" id="lista-produtos"></ul>
+        </section>
+
+        <section class="secao">
+            <h2>Compare antes de escolher</h2>
+            <div class="tabela-rolagem">
+                <table class="tabela" id="tabela-produtos">
+                    <caption>Resumo de todos os produtos do catálogo.</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Produto</th>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Estoque</th>
+                            <th scope="col">Preço</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                    <tfoot>
+                        <tr><td colspan="4">Preços à vista. Parcelamento em até 10x sem juros.</td></tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+    <!-- janela de detalhes do produto (preenchida pelo js) -->
+    <dialog class="detalhes" id="detalhes">
+        <img class="detalhes_img produto_figura" src="img/padrao.svg" alt="">
+        <div class="detalhes_corpo">
+            <h3 class="detalhes_nome produto_nome"></h3>
+            <p class="detalhes_desc produto_texto"></p>
+            <dl>
+                <dt>Categoria</dt><dd class="detalhes_categoria"></dd>
+                <dt>Preço</dt><dd class="detalhes_preco"></dd>
+                <dt>Parcelamento</dt><dd class="detalhes_parcela"></dd>
+                <dt>Estoque</dt><dd class="detalhes_estoque"></dd>
+            </dl>
+            <button type="button" class="botao" id="fechar-detalhes">Fechar</button>
+        </div>
+    </dialog>
+    </main>
+
+    <!-- footer -->
+    <footer class="rodape">
+        <p>NeoByte Tecnologia &middot; Projeto Integrador TMS0058 &middot; <a href="contato.html">Fale conosco</a></p>
+        <p style="margin-top: 6px; opacity: 0.8;">&copy; 2026 &middot; Loja fictícia criada para fins acadêmicos.</p>
+    </footer>
+
+    <script src="js/produtos.js"></script>
+    <script src="js/loja.js"></script>
+</body>
+</html>
