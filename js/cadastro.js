@@ -161,7 +161,7 @@ formCadastro.addEventListener("submit", function (evento) {
         categoria: selectCategoria.value,
         preco: parseFloat(document.querySelector("#preco").value.replace(",", ".")),
         estoque: Number(document.querySelector("#estoque").value),
-        imagem: imagemEscolhida !== "" ? imagemEscolhida : "img/padrao.svg",
+        imagem: imagemEscolhida !== "" ? imagemEscolhida : "../img/padrao.svg",
         descricao: document.querySelector("#descricao").value.trim(),
         destaque: document.querySelector("#destaque").checked
     };
@@ -185,7 +185,7 @@ formCadastro.addEventListener("reset", function () {
 const selectImagem = document.querySelector("#imagem");
 const previa = document.querySelector("#previa-imagem");
 selectImagem.addEventListener("change", function () {
-    previa.src = selectImagem.value !== "" ? selectImagem.value : "img/padrao.svg";
+    previa.src = selectImagem.value !== "" ? selectImagem.value : "../img/padrao.svg";
 });
 
 atualizarTabela();
